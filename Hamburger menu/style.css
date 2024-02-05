@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #93a3b1;
+  color: #ccc;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container-menu {
+  position: relative;
+  top: 40px;
+}
+
+.menu-item,
+.menu-button {
+  background: #742c0b;
+  border-radius: 200px;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  color: white;
+}
+
+.menu-checked {
+  display: none;
+}
+
+.bar {
+  height: 3px;
+  background: white;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  right: 30px;
+  transition: transform 0.4s;
+}
+
+.bar-1 {
+  transform: translate3d(0, -8px, 0);
+}
+
+.bar-2 {
+  transform: translate3d(0, 0, 0);
+}
+
+.bar-3 {
+  transform: translate3d(0, 8px, 0);
+}
+
+.menu-checked:checked + .menu-button .bar-1 {
+  transform: translate3d(0, 0, 0) rotate(45deg);
+}
+
+.menu-checked:checked + .menu-button .bar-2 {
+  transform: translate3d(0, 0, 0) scale(0.1, 1);
+}
+
+.menu-checked:checked + .menu-button .bar-3 {
+  transform: translate3d(0, 0, 0) rotate(-45deg);
+}
+
+.menu-item {
+  transition-duration: 0.4s;
+}
+
+.menu-item img {
+  margin-top: 25px;
+}
+
+.menu-item:hover {
+  background: #c64c13;
+}
+
+.menu-button {
+  z-index: 2;
+  transition-duration: 0.4s;
+  transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+  cursor: pointer;
+}
+
+.menu-button:hover {
+  transform: scale(1.2, 1.2);
+}
+
+.menu-checked:checked + .menu-button {
+  transition-duration: 0.4s;
+  transform: scale(0.9, 0.9);
+}
+
+.menu-checked:checked + .menu-button:hover {
+  background: #c64c13;
+}
+
+.menu-checked:checked ~ .menu-item:nth-child(3) {
+  transition-duration: 0.5s;
+  transform: translate3d(0px, 100px, 0);
+}
+
+.menu-checked:checked ~ .menu-item:nth-child(4) {
+  margin-top: 10px;
+  transition-duration: 0.7s;
+  transform: translate3d(0, 200px, 0);
+}
+
+.menu-checked:checked ~ .menu-item:nth-child(5) {
+  margin-top: 20px;
+  transition-duration: 0.9s;
+  transform: translate3d(0, 300px, 0);
+}
+
+.menu-checked:checked ~ .menu-item:nth-child(6) {
+  margin-top: 30px;
+  transition-duration: 1.1s;
+  transform: translate3d(0, 400px, 0);
+}
+
+.menu-checked:checked ~ .menu-item:nth-child(7) {
+  margin-top: 40px;
+  transition-duration: 1.3s;
+  transform: translate3d(0, 500px, 0);
+}
